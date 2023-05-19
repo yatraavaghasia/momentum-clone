@@ -6,6 +6,8 @@ import ReadTime from './components/time';
 // import GeolocationComponent from './components/geolocation';
 import SearchBar from './components/searchbar';
 import WeatherComponent from './components/locationweather';
+import ToDo from './components/todo';
+import Quotes from './components/quotes';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='main'>
@@ -13,7 +15,9 @@ root.render(
 <ReadTime />
 <WeatherComponent />
 <SearchBar />
+<ToDo />
 <PostComponent />
+{/* <Quotes /> */}
 </div>
 );
 
