@@ -2,10 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import PostComponent from './components/FetchData';
 import BackgroundComponent from './components/backgroundComponent';
+import ReadTime from './components/time';
+// import GeolocationComponent from './components/geolocation';
+import SearchBar from './components/searchbar';
+import WeatherComponent from './components/locationweather';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='main'>
 <BackgroundComponent />
+<ReadTime />
+<WeatherComponent />
+<SearchBar />
 <PostComponent />
 </div>
 );
