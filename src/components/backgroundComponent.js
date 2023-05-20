@@ -6,7 +6,7 @@ const backgroundComponent = () => {
         try {
             const response = await axios.get('https://api.unsplash.com/photos/?client_id=EtC0F60kOBh9KNaTKTn6IXnNKIZ2z9n9qjoIFUe8-sI', {
                 params: {
-                    query: 'background',
+                    query: ['nature','architecture','art'].join(','),
                     orientation: 'landscape',
                     client_id: 'EtC0F60kOBh9KNaTKTn6IXnNKIZ2z9n9qjoIFUe8-sI',
                 },
@@ -14,6 +14,7 @@ const backgroundComponent = () => {
             );
             // console.log(response.data[0].urls.regular);
             console.log(response.data.length);
+            console.log(response.data);
             const randomIndex = Math.floor(Math.random()*response.data.length);
             setBackgroundUrl(response.data[randomIndex].urls.regular);
         } catch (error) {
@@ -32,9 +33,9 @@ const backgroundComponent = () => {
     };
     return (
         <div>
-            <h2>
+            {/* <h2>
                 Background Component
-            </h2>
+            </h2> */}
             <button onClick={handleRefresh}>Refresh Background</button>
         </div>
     );
