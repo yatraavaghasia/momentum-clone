@@ -6,7 +6,7 @@ const backgroundComponent = () => {
         try {
             const response = await axios.get('https://api.unsplash.com/photos/?client_id=EtC0F60kOBh9KNaTKTn6IXnNKIZ2z9n9qjoIFUe8-sI', {
                 params: {
-                    query: ['nature','architecture','art'].join(','),
+                    query: ['nature','architecture','art','background'].join(','),
                     orientation: 'landscape',
                     client_id: 'EtC0F60kOBh9KNaTKTn6IXnNKIZ2z9n9qjoIFUe8-sI',
                 },
