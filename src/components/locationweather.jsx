@@ -64,7 +64,7 @@ const WeatherComponent = () => {
         return `${(kelvin-273.15).toFixed(1)}℃`;
     }
     return (
-        <div>
+        <div className='weather'>
             <h2>Weather Component 2.0</h2>
             <input
             type='text'

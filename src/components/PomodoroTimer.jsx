@@ -105,7 +105,7 @@ const PomodoroTimer = () => {
   };
 
   return (
-    <div>
+    <div className='pomodoro'>
       <h1>{`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</h1>
       <div>
         {!isActive ? (

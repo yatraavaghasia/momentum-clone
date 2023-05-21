@@ -6,15 +6,11 @@ const ToDo = () => {
        setIsShown(current => !current);
     }
     return(
-        <div>
+        <div className="todo">
+            <div style={{display: isShown ? 'block' : 'none'}}>
+                <ToDoList />
+            </div>
         <button onClick={toggleToDo}>To Do</button>
-        {/* {
-            isShown && <ToDoList />
-        } */}
-        <div style={{display: isShown ? 'block' : 'none'}}>
-        <ToDoList />
-      </div>
-        {/* <ToDoList /> */}
         </div>
     );
 };

@@ -24,7 +24,7 @@ const Quotes =  () => {
       };
 
       return (
-        <div>
+        <div className="quote">
          {quote ? (
                 <div>
                 <h3>{quote.text}</h3>

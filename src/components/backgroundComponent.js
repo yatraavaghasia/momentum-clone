@@ -32,10 +32,7 @@ const backgroundComponent = () => {
         fetchBackground();
     };
     return (
-        <div>
-            {/* <h2>
-                Background Component
-            </h2> */}
+        <div className='background-refresh'>
             <button onClick={handleRefresh}>Refresh Background</button>
         </div>
     );
