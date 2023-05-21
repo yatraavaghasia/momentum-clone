@@ -12,14 +12,19 @@ import PomodoroTimer from './components/PomodoroTimer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='main'>
-<BackgroundComponent />
-<ReadTime />
+<div className='top'>
 <WeatherComponent />
+</div>
+<div className='middle'>
+<ReadTime />
 <SearchBar />
-<ToDo />
-// <PostComponent />
 <PomodoroTimer />
+</div>
+<div className='bottom'>
+<BackgroundComponent />
 <Quotes />
+<ToDo />
+</div>
 </div>
 );
 
