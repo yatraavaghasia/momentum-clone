@@ -17,9 +17,9 @@ root.render(
 <WeatherComponent />
 <SearchBar />
 <ToDo />
-<PostComponent />
+// <PostComponent />
 <PomodoroTimer />
-{/* <Quotes /> */}
+<Quotes />
 </div>
 );
 
