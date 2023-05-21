@@ -1,6 +1,6 @@
 body {
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
     height: 100vh;
     width: 100vw;
     /* background-color: chartreuse; */
@@ -8,9 +8,13 @@ body {
 .main {
     height: 100vh;
     width: 100vw;
-    /* overflow-y: scroll; */
     margin: 0;
     padding: 0;
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 body {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -20,7 +24,78 @@ body::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
 #root {
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     overflow: hidden;
+}
+.background-refresh {
+    /* background-color: aqua; */
+    width:17.5vw;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+.todo {
+    width: 17.5vw;
+    /* background-color: chartreuse; */
+    margin-bottom: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.quote {
+    /* background-color: blue; */
+    width:65vw;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items:end;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    /* background-color: crimson; */
+    width: 100vw;
+}
+.pomodoro {
+    display: none;
+}
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    /* background-color: darkgreen; */
+    width: 100vw;
+}
+.middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 45vh;
+    /* background-color: cornflowerblue; */
+    text-align: center;
+}
+.search {
+    margin: 2vw;
+    font-size: 4vw;
+}
+.search input {
+    font-size: 1.5vw;
+}
+.time-parent {
+    font-size: 1.5vw;
+}
+.time-parent input {
+    font-size: 1.5vw;
 }
