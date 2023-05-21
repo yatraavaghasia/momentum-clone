@@ -8,6 +8,7 @@ import SearchBar from './components/searchbar';
 import WeatherComponent from './components/locationweather';
 import ToDo from './components/todo';
 import Quotes from './components/quotes';
+import PomodoroTimer from './components/PomodoroTimer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='main'>
@@ -17,6 +18,7 @@ root.render(
 <SearchBar />
 <ToDo />
 <PostComponent />
+<PomodoroTimer />
 {/* <Quotes /> */}
 </div>
 );
