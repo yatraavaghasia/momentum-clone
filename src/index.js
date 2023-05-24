@@ -6,15 +6,30 @@ import ReadTime from './components/time';
 // import GeolocationComponent from './components/geolocation';
 import SearchBar from './components/searchbar';
 import WeatherComponent from './components/locationweather';
+import ToDo from './components/todo';
+import Quotes from './components/quotes';
+import PomodoroTimer from './components/PomodoroTimer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='main'>
-<BackgroundComponent />
-<ReadTime />
+<div className='top'>
 <WeatherComponent />
-<SearchBar />
-<PostComponent />
 </div>
+<div className='middle'>
+<ReadTime />
+<SearchBar />
+<PomodoroTimer />
+</div>
+<div className='bottom' >
+<BackgroundComponent />
+<Quotes />
+<div style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
+  <ToDo />
+</div>
+
+</div>
+</div>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
