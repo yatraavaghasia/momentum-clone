@@ -51,6 +51,10 @@ const WeatherComponent = () => {
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`);
             setWeatherData(response.data);
             console.log(response.data);
+            console.log(response.data.weather[0].icon);
+            let icon = response.data.weather[0].icon
+            let iconurl = `https://openweathermap.org/img/wn/${icon}.png`
+            console.log(iconurl);
             setError(null);
         }
         catch (error)
@@ -65,21 +69,26 @@ const WeatherComponent = () => {
     }
     return (
         <div className='weather-child'>
-            <h2>Weather Component 2.0</h2>
-            <input
-            type='text'
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder='Enter city name'>
-            </input>
-            <button onClick={handleCitySearch}>Search</button>
-            <button onClick={handleLocationClick}>Get Current Location's Weather</button>
-            {error && <p>{error}</p>}
-            {weatherdata && (
+            { weatherdata ? (
+                <div className='children1'>
+                { weatherdata.weather[0].icon && <img src={`http://openweathermap.org/img/wn/${weatherdata.weather[0].icon}.png`} alt='Weather Icon'/>}
+                    <h3>{formatTemperature(weatherdata.main.temp)}</h3>
+                    <p id='city-name'>{weatherdata.name}</p>
+                    {/* <p>Weather: {weatherdata.weather[0].description}</p> */}
+                </div>
+            ):(
+                <div className='children2'>
                 <div>
-                    <h3>{weatherdata.name}</h3>
-                    <p>Temperature:{formatTemperature(weatherdata.main.temp)}</p>
-                    <p>Weather: {weatherdata.weather[0].description}</p>
+                <input
+                    type='text'
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    placeholder='Enter city name'>
+                </input>
+                <button onClick={handleCitySearch}><i class="fa-solid fa-magnifying-glass-location"></i></button>
+                <button onClick={handleLocationClick}><i class="fa-solid fa-location-dot"></i></button>
+                {error && <p>{error}</p>}
+                </div>
                 </div>
             )}
         </div>

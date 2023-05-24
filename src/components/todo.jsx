@@ -7,7 +7,7 @@ const ToDo = () => {
     }
     return(
         <div className="todo">
-            <div style={{display: isShown ? 'block' : 'none'}}>
+            <div style={{display: isShown ? 'block' : 'none'}} className="todolist">
                 <ToDoList />
             </div>
         <button onClick={toggleToDo}>To Do</button>

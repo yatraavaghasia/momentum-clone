@@ -7,7 +7,7 @@ function ReadTime()
     {
         const newTime = new Date().toLocaleTimeString();
         const hours = new Date().getHours();
-        console.log(hours);
+        //console.log(hours);
         setTime(newTime);
     };
     setInterval(updateTime, 1000);
