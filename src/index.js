@@ -1,24 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import PostComponent from './components/FetchData';
+// import PostComponent from './components/FetchData';
 import BackgroundComponent from './components/backgroundComponent';
 import ReadTime from './components/time';
 // import GeolocationComponent from './components/geolocation';
-import SearchBar from './components/searchbar';
-import WeatherComponent from './components/locationweather';
+// import SearchBar from './components/searchbar';
+// import WeatherComponent from './components/locationweather';
+import WeatherParent from './components/weatherparent';
 import ToDo from './components/todo';
 import Quotes from './components/quotes';
 import PomodoroTimer from './components/PomodoroTimer';
+// import NameTimeSearch from './components/nametimesearch';
+import App from './components/middle';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='main'>
 <div className='top'>
-<WeatherComponent />
+<WeatherParent />
 </div>
 <div className='middle'>
-<ReadTime />
-<SearchBar />
-<PomodoroTimer />
+<App />
+{/* <PomodoroTimer /> */}
 </div>
 <div className='bottom'>
 <BackgroundComponent />
