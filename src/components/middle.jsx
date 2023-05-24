@@ -22,10 +22,14 @@ const App = () => {
       <button onClick={toggleComponent}>
         {showNameTimeSearch ? 'Switch to Pomodoro' : 'Switch to NameTimeSearch'}
       </button>
-      <div>
-      {
+      <div style={nameStyle}>
+      {/* {
         showNameTimeSearch? <NameTimeSearch /> : <PomodoroTimer />
-      }
+      } */}
+      <NameTimeSearch />
+      </div>
+      <div style={pomodoroStyle}>
+        <PomodoroTimer />
       </div>
     </div>
   );
