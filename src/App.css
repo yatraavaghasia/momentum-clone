@@ -1,0 +1,95 @@
+.todo-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  input[type='text'] {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  /* Updated Styles for Pop-up Effect */
+  .popup-container {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: popup-animation 0.3s ease-in-out;
+  }
+  
+  .popup-inner {
+    height: 200px;
+    overflow-y: auto;
+  }
+  
+  .show-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .show-button.active {
+    background-color: #ff0000;
+  }
+  
+  @keyframes popup-animation {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
