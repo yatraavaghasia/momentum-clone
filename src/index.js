@@ -20,7 +20,6 @@ root.render(
 </div>
 <div className='middle'>
 <App />
-{/* <PomodoroTimer /> */}
 </div>
 <div className='bottom'>
 <BackgroundComponent />
