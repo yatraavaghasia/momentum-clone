@@ -65,14 +65,14 @@ const WeatherComponent = () => {
     };
     function formatTemperature(kelvin)
     {
-        return `${(kelvin-273.15).toFixed(1)}℃`;
+        return `${(kelvin-273.15).toFixed(1)}`;
     }
     return (
         <div className='weather-child'>
             { weatherdata ? (
                 <div className='children1'>
                 { weatherdata.weather[0].icon && <img src={`http://openweathermap.org/img/wn/${weatherdata.weather[0].icon}.png`} alt='Weather Icon'/>}
-                    <h3>{formatTemperature(weatherdata.main.temp)}</h3>
+                    <h3>{formatTemperature(weatherdata.main.temp)}°C</h3>
                     <p id='city-name'>{weatherdata.name}</p>
                     {/* <p>Weather: {weatherdata.weather[0].description}</p> */}
                 </div>
