@@ -18,14 +18,11 @@ const App = () => {
   console.log(document.getElementsByClassName('nametimesearch'));
   const div1 = document.getElementsByClassName('nametimesearch');
   return (
-    <div>
-      <button onClick={toggleComponent}>
-        {showNameTimeSearch ? 'Switch to Pomodoro' : 'Switch to NameTimeSearch'}
+    <div className='nametime'>
+      <button onClick={toggleComponent} className='shuffle'>
+        <i class="fa-solid fa-shuffle"></i>
       </button>
       <div style={nameStyle}>
-      {/* {
-        showNameTimeSearch? <NameTimeSearch /> : <PomodoroTimer />
-      } */}
       <NameTimeSearch />
       </div>
       <div style={pomodoroStyle}>

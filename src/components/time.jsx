@@ -56,7 +56,7 @@ const [submitted, setSubmitted] = React.useState(false);
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="tell us your name"></input>
-            <button type="submit">submit</button>
+            <button type="submit"><i class="fa-solid fa-check"></i></button>
         </form>
         ) : (
             <h1 id="greeting">{greeting}, {name}.</h1>

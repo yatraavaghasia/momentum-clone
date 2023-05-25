@@ -23,7 +23,7 @@ const ToDoList = () => {
         setToDoItems(updatedToDo);
     }
     return (
-        <div>
+        <div className='tdl'>
             <h3>To Do list</h3>
             <form onSubmit={addnewToDo}>
                 <input type='text' value={newToDo} onChange={e => setNewToDo(e.target.value)} placeholder='add new task'></input>
@@ -31,14 +31,18 @@ const ToDoList = () => {
             </form>
             <ul>
             { toDoItems.map((todo, index) => (
-          <li key={index} style={todo.completed ? { textDecoration: 'line-through' } : null}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => toggleCompleted(index)}
-            />
-            {todo.text}
-            <button onClick={() => deleteToDo(index)}>Delete</button>
+          <li key={index} style={todo.completed ? { textDecoration: 'line-through' } : null} className='list'>
+          {/* <div> */}
+                <input
+                    type="checkbox"
+                    checked={todo.completed}
+                    onChange={() => toggleCompleted(index)}
+                    />
+                    <p>
+                    {todo.text}
+                    </p>
+                    <button onClick={() => deleteToDo(index)}><i class="fa-solid fa-trash"></i></button>
+          {/* </div> */}
           </li>
         ))}
 

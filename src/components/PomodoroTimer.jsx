@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 const PomodoroTimer = () => {
-  const [mode, setMode] = useState('work');
+  const [mode, setMode] = useState('Focus');
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [customMinutes, setCustomMinutes] = useState(0); // User-input custom minutes
   const [inputValue, setInputValue] = useState('');
   const[showError,setShowError]=useState(false);
+  const [menu,setMenu] = useState(false);
   useEffect(() => {
     let interval = null;
 
@@ -31,19 +32,19 @@ const PomodoroTimer = () => {
   }, [isActive, minutes, seconds]);
 
   const handleTimerCompletion = () => {
-    if (mode === 'work') {
+    if (mode === 'Focus') {
       // Work timer completed, switch to short break
-      setMode('shortBreak');
+      setMode('Short Break');
       setMinutes(5);
       setSeconds(0);
-    } else if (mode === 'shortBreak') {
+    } else if (mode === 'Short Break') {
       // Short break completed, switch to work
-      setMode('work');
+      setMode('Focus');
       setMinutes(25);
       setSeconds(0);
-    } else if (mode === 'longBreak') {
+    } else if (mode === 'Long Break') {
       // Long break completed, switch to work
-      setMode('work');
+      setMode('Focus');
       setMinutes(25);
       setSeconds(0);
     }
@@ -60,21 +61,21 @@ const PomodoroTimer = () => {
 
   const resetTimer = () => {
     setIsActive(false);
-    setMode('work');
+    setMode('Focus');
     setMinutes(25);
     setSeconds(0);
   };
 
   const setShortBreak = () => {
     setIsActive(false);
-    setMode('shortBreak');
+    setMode('Short Break');
     setMinutes(5);
     setSeconds(0);
   };
 
   const setLongBreak = () => {
     setIsActive(false);
-    setMode('longBreak');
+    setMode('Long Break');
     setMinutes(15);
     setSeconds(0);
   };
@@ -94,7 +95,7 @@ const PomodoroTimer = () => {
     const value=parseInt(inputValue,10);
     if(value>=0 && value<=60){
     setIsActive(false);
-    setMode('custom');
+    setMode('Custom');
     setMinutes(value);
     setSeconds(0);
     setShowError(false);
@@ -103,36 +104,54 @@ const PomodoroTimer = () => {
       console.log('limit exceeded');
     }
   };
-
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
+  const menuStyle = {
+    display: menu ? 'block' : 'none',
+  };
   return (
     <div className='pomodoro'>
-      <h1>{`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</h1>
+      <div className='big'>
+        <h1>{`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</h1>
+      </div>
       <div>
+        <h3>{mode}</h3>
+      </div>
+      <div className='control1'>
         {!isActive ? (
-          <button onClick={startTimer}>Start</button>
+          <button onClick={startTimer}><i class="fa-solid fa-circle-play"></i></button>
         ) : (
-          <button onClick={pauseTimer}>Pause</button>
+          <button onClick={pauseTimer}><i class="fa-solid fa-pause"></i></button>
         )}
-        <button onClick={resetTimer}>Reset</button>
+        <button onClick={resetTimer}><i class="fa-solid fa-rotate-left"></i></button>
       </div>
-      <div>
-        <p>Mode: {mode}</p>
+      <div className='child1'>
+      <button onClick={toggleMenu}><i class="fa-solid fa-ellipsis"></i></button>
+      <div style={menuStyle} className='menu'>
+        <div className='break'>
+          <button onClick={setShortBreak}><i class="fa-solid fa-mug-hot"></i></button>
+          <button onClick={setLongBreak}><i class="fa-solid fa-burger"></i></button>
+        </div>
+        <div className='star'>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div className='customtimer'>
+          <div>
+              <input
+                  type="number"
+                  min="0"
+                  max="60"
+                  value={inputValue}
+                  onChange={handleCustomMinutesChange}
+                />
+                <button onClick={setCustomTimer}><i class="fa-solid fa-stopwatch-20"></i></button>
+          </div>
+          <div>
+              {showError && <p>You can only enter values between 0 and 60 minutes.</p>}
+          </div>
+        </div>
       </div>
-      <div>
-        <button onClick={setShortBreak}>Short Break</button>
-        <button onClick={setLongBreak}>Long Break</button>
-      </div>
-      <div>
-       
-      <input
-          type="number"
-          min="0"
-          max="60"
-          value={inputValue}
-          onChange={handleCustomMinutesChange}
-        />
-        <button onClick={setCustomTimer}>Set Custom Timer</button>
-        {showError && <p>Error: Enter a value betweeb 0 and 60</p>}
       </div>
     </div>
   );

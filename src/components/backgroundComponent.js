@@ -33,7 +33,7 @@ const backgroundComponent = () => {
     };
     return (
         <div className='background-refresh'>
-            <button onClick={handleRefresh}>Refresh Background</button>
+            <button onClick={handleRefresh}><i class="fa-solid fa-rotate-right"></i></button>
         </div>
     );
 };

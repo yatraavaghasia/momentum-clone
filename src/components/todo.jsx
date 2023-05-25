@@ -10,7 +10,7 @@ const ToDo = () => {
             <div style={{display: isShown ? 'block' : 'none'}} className="todolist">
                 <ToDoList />
             </div>
-        <button onClick={toggleToDo}>To Do</button>
+        <button onClick={toggleToDo} className="todobutton">To Do</button>
         </div>
     );
 };

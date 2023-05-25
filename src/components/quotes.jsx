@@ -26,7 +26,7 @@ const Quotes =  () => {
       return (
         <div className="quote">
          {quote ? (
-                <div>
+                <div className="writing">
                 <h3>{quote.text}</h3>
                 <p>{quote.author}</p>
                 </div>
@@ -34,7 +34,7 @@ const Quotes =  () => {
                 <p>Loading...</p>
             )}
             
-            <button onClick={handleRefresh}>Refresh</button>
+            <button onClick={handleRefresh}><i class="fa-solid fa-rotate-right"></i></button>
         </div>
       );
 };
