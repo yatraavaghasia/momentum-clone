@@ -30,15 +30,26 @@ body::-webkit-scrollbar {
 }
 .background-refresh {
     /* background-color: aqua; */
-    width:17.5vw;
+    width:20vw;
     margin-right: 0;
     display: flex;
-    justify-content: center;
-    margin-bottom: 2vw;
+    justify-content:flex-start;
+    align-items: center;
+    margin-left: 2vw;
+    /* margin-bottom: 2vw; */
+}
+.background-refresh button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 2vw;
+    color: white;
 }
 .todo {
-    width: 17.5vw;
+    font-family: 'Montserrat',sans-serif;
+    width: 20vw;
     /* background-color: chartreuse; */
+    margin-right: 2vw;
     margin-bottom: 2vw;
     display: flex;
     flex-direction: column;
@@ -48,18 +59,68 @@ body::-webkit-scrollbar {
     z-index: 2;
     display: flex;
 }
+.todo .todobutton {
+    font-size: 1.5vw;
+    font-weight: bolder;
+    margin-right: -2vw;
+}
+.todo button, .todo input {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: transparent;
+    outline: none;
+}
+.todo button {
+    border:none;
+}
+.todo input {
+    border: none;
+    border-bottom: solid white;
+}
 .todolist {
     background-color: rgb(255, 255, 255,0.5);
+    width: 20vw;
+    padding: 0.5vw;
+    margin-bottom: 1vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.todolist h3, .todolist form {
+    align-items: center;
+    text-align: center;
+}
+.todolist input {
+    width: 8vw;
+}
+.tdl ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items:center;
 }
 .quote {
-    /* background-color: blue; */
-    width:65vw;
+    font-family: 'Montserrat',sans-serif;
+    width:60vw;
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.writing {
+    font-size: 1vw;
+    color: white;
+}
+.quote button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1vw;
+    color: white;
 }
 .bottom {
     display: flex;
@@ -86,10 +147,18 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 .weather-parent {
-    background-color: rgb(255, 255, 255,0.5);
+    /* background-color: rgb(255, 255, 255,0.5); */
     display: flex;
     flex-direction: row-reverse;
     padding: 0.5vw;
+    margin: 1vw;
+}
+.weather-parent button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 2vw;
+    color: white;
 }
 .weather-child {
     margin: 1vh;
@@ -116,20 +185,31 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     row-gap: 0;
+    justify-content: center;
+    align-items: baseline;
     /* background-color: blue; */
+}
+.weather-child .children2 input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: solid white;
+    border-radius: 5px;
+    font-size: 1vw;
 }
 .weather-child .children2 {
     display: flex;
     flex-direction:row;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     height: inherit;
     height: 100%;
     /* background-color: aqua; */
     /* padding-top: 2vw; */
 }
 .weather-child .children2 input{
-    max-width: 5vw;
+    max-width: 8vw;
+    color: white;
 }
 .middle {
     display: flex;
@@ -137,11 +217,12 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 45vh;
+    height:45vh;
     /* background-color: cornflowerblue; */
     text-align: center;
     position: relative;
     z-index: 1;
+    margin-top: 0;
 }
 .search {
     margin: 2vw;
@@ -152,7 +233,182 @@ body::-webkit-scrollbar {
 }
 .time-parent {
     font-size: 1.5vw;
+    width: 50vw;
+    /* background-color: antiquewhite; */
+    margin: 0;
 }
 .time-parent input {
     font-size: 1.5vw;
 }
+.pomodoro {
+    /* background-color: rgb(255, 255, 255,0.1);
+     */
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    width: 50vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1vw;
+}
+.pomodoro .big {
+    /* background-color: blanchedalmond; */
+    padding: 0;
+    margin: 0;
+    height: 10vw;
+}
+.pomodoro .big h1 {
+    display: hidden;
+    font-size: 6vw;
+}
+.pomodoro i {
+    color: white;
+}
+.pomodoro button {
+    background-color: transparent;
+    border: none;
+    font-size: larger;
+}
+.contorl1 {
+    /* background-color: darkgray; */
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+.pomodoro div {
+    margin: 0.5vw;
+}
+.pomodoro .big {
+    margin-bottom: -1vw;
+    font-size: larger;
+}
+.pomodoro .child1 {
+    display: flex;
+    /* background-color: aqua; */
+    /* height: 60vh; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+.pomodoro .child1 .menu {
+    /* background-color: yellowgreen; */
+    display: flex-box;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* width: 30vw; */
+    padding: 0;
+    height: max-content;
+    margin-top:1vw;
+}
+.menu div {
+    width:auto;
+    /* background-color: beige; */
+    display: inline-block;
+}
+.customtimer {
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.shuffle {
+    background-color:transparent;
+    font-size: 2vw;
+    border: none;
+    color: white;
+    margin: 0;
+}
+.search {
+    /* background-color: darkblue; */
+    margin: 0;
+    padding: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.search button {
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 2vw;
+}
+.search input {
+    background-color:rgb(255, 255, 255,0.5);
+    outline: none;
+    border: solid;
+    border: white;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vw;
+}
+.customtimer input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: solid;
+    border-color: white;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.time-child-1 h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5vw;
+    color: white;
+}
+.time-child-1, .time-child-2 {
+    margin: 0;
+}
+.time-child-2 input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: solid;
+    border-color: white;
+    margin-bottom: 1vw;
+    color: white;
+    text-align: center;
+    font-size: 2vw;
+}
+.time-child-2 button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+}
+.time-child-2 h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3vw;
+    color: white;
+}
+/* .pomodoro .child1 .menu div {
+    width:10vw;
+    display: inline-block;
+    background-color: brown;
+} */
+/* .pomodoro .customtimer {
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.pomodoro .customtimer button {
+    margin-right: 1vw;
+}
+.pomodoro .customtimer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
