@@ -148,6 +148,7 @@ body::-webkit-scrollbar {
 }
 .weather-parent {
     /* background-color: rgb(255, 255, 255,0.5); */
+    font-family: 'Montserrat',sans-serif;
     display: flex;
     flex-direction: row-reverse;
     padding: 0.5vw;
